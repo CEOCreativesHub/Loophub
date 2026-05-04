@@ -1,0 +1,1771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>RevLoop — Brand Package</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #F5F2ED;
+  --bg2: #EDE9E2;
+  --ink: #1A1A1A;
+  --ink2: #3D3D3D;
+  --muted: #7A7A7A;
+  --accent: #3A8A57;
+  --accent-dark: #2D6E44;
+  --accent-light: #EBF5EF;
+  --white: #FEFCF9;
+  --border: #D8D3C8;
+  --danger: #C0392B;
+  --sidebar-w: 220px;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  background:var(--bg);
+  color:var(--ink);
+  font-family:'DM Sans',sans-serif;
+  font-size:15px;
+  line-height:1.6;
+  overflow-x:hidden;
+  display:flex;
+  min-height:100vh;
+}
+
+/* ══════════════════════════
+   SIDEBAR
+══════════════════════════ */
+.sidebar {
+  width:var(--sidebar-w);
+  min-height:100vh;
+  background:var(--ink);
+  position:fixed;
+  top:0; left:0;
+  display:flex;
+  flex-direction:column;
+  z-index:100;
+  border-right:1px solid #2A2A2A;
+}
+.sidebar-logo {
+  padding:28px 24px 24px;
+  border-bottom:1px solid #2A2A2A;
+}
+.sidebar-logo-text {
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-weight:800;
+  font-size:22px;
+  letter-spacing:-0.03em;
+  color:#fff;
+  line-height:1;
+  margin-bottom:4px;
+}
+.sidebar-logo-text span { color:var(--accent); }
+.sidebar-logo-sub {
+  font-size:11px;
+  color:#444;
+  letter-spacing:0.05em;
+  text-transform:uppercase;
+}
+.sidebar-nav {
+  padding:20px 12px;
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  flex:1;
+}
+.nav-btn {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:10px 14px;
+  border-radius:8px;
+  border:none;
+  background:transparent;
+  color:#666;
+  font-family:'DM Sans',sans-serif;
+  font-size:13px;
+  font-weight:500;
+  cursor:pointer;
+  text-align:left;
+  transition:all 0.18s;
+  width:100%;
+}
+.nav-btn:hover { background:#1E1E1E; color:#ccc; }
+.nav-btn.active { background:rgba(58,138,87,0.15); color:var(--accent); }
+.nav-btn .nav-icon { font-size:15px; width:20px; text-align:center; flex-shrink:0; }
+.nav-btn .nav-num {
+  margin-left:auto;
+  font-size:10px;
+  color:#333;
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-weight:700;
+}
+.nav-btn.active .nav-num { color:rgba(58,138,87,0.5); }
+.sidebar-footer {
+  padding:16px 20px;
+  border-top:1px solid #2A2A2A;
+  font-size:11px;
+  color:#333;
+  line-height:1.6;
+}
+.sidebar-footer span { color:var(--accent); }
+
+/* ══════════════════════════
+   MAIN CONTENT
+══════════════════════════ */
+.main {
+  margin-left:var(--sidebar-w);
+  flex:1;
+  min-height:100vh;
+}
+
+/* TAB PANELS */
+.tab-panel { display:none; }
+.tab-panel.active { display:block; }
+
+/* ══════════════════════════
+   SHARED
+══════════════════════════ */
+.section-wrap { padding:52px 48px; }
+.section-label {
+  font-size:11px; letter-spacing:0.2em; text-transform:uppercase;
+  color:var(--accent); font-weight:700; margin-bottom:10px;
+  display:flex; align-items:center; gap:10px;
+}
+.section-label::before { content:''; width:20px; height:2px; background:var(--accent); }
+h2 {
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:clamp(24px,3.5vw,38px);
+  font-weight:800; letter-spacing:-0.02em; line-height:1.1;
+}
+h3 {
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-weight:700; letter-spacing:-0.01em;
+}
+.highlight-box {
+  background:var(--accent-light); border-left:3px solid var(--accent);
+  border-radius:0 10px 10px 0; padding:18px 22px;
+  font-size:14px; color:var(--ink2); line-height:1.7;
+}
+.highlight-box strong { color:var(--ink); }
+.divider { border:none; border-top:1px solid var(--border); margin:40px 0; }
+
+/* ══════════════════════════
+   00 — ELEVATOR PITCH
+══════════════════════════ */
+.pitch-hero {
+  background:var(--ink);
+  padding:56px 48px;
+  position:relative;
+  overflow:hidden;
+}
+.pitch-blob {
+  position:absolute; top:-150px; right:-150px;
+  width:500px; height:500px; border-radius:50%;
+  background:radial-gradient(circle,rgba(58,138,87,0.15) 0%,transparent 70%);
+  pointer-events:none;
+}
+.pitch-blob2 {
+  position:absolute; bottom:-80px; left:40%;
+  width:300px; height:300px; border-radius:50%;
+  background:radial-gradient(circle,rgba(58,138,87,0.07) 0%,transparent 70%);
+  pointer-events:none;
+}
+.pitch-inner { position:relative; z-index:1; max-width:780px; }
+.pitch-eyebrow {
+  display:inline-flex; align-items:center; gap:8px;
+  background:rgba(58,138,87,0.15); border:1px solid rgba(58,138,87,0.3);
+  border-radius:20px; padding:5px 14px;
+  font-size:12px; color:var(--accent); font-weight:600;
+  margin-bottom:24px; letter-spacing:0.04em;
+}
+.pitch-dot { width:6px; height:6px; border-radius:50%; background:var(--accent); animation:blink 2s ease-in-out infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+.pitch-h1 {
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:clamp(36px,5vw,64px);
+  font-weight:800; letter-spacing:-0.03em; line-height:1.05;
+  color:#fff; margin-bottom:20px;
+}
+.pitch-h1 .g { color:var(--accent); }
+.pitch-tagline {
+  font-size:clamp(15px,1.8vw,18px);
+  color:#bbb; line-height:1.7; max-width:620px; margin-bottom:36px;
+}
+.pitch-tagline em { color:#fff; font-style:normal; font-weight:500; }
+.pitch-tagline em { color:#bbb; font-style:normal; }
+.pitch-stats {
+  display:flex; gap:0; flex-wrap:wrap;
+  border-top:1px solid #2A2A2A; padding-top:28px;
+}
+.pitch-stat { padding-right:32px; margin-right:32px; border-right:1px solid #2A2A2A; }
+.pitch-stat:last-child { border-right:none; }
+.pitch-stat-num {
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:28px; font-weight:800; color:#fff; letter-spacing:-0.03em; line-height:1;
+}
+.pitch-stat-num .g { color:var(--accent); }
+.pitch-stat-lbl { font-size:12px; color:#aaa; margin-top:3px; }
+
+/* ELEVATOR PITCH CARDS */
+.pitch-cards { background:var(--ink); padding:0 48px 64px; }
+.pitch-3col { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:0; padding-top:48px; border-top:1px solid #2A2A2A; }
+.pitch-card {
+  background:#1E1E1E; border:1px solid #2A2A2A;
+  border-radius:14px; padding:28px;
+  transition:all 0.2s; border-top:2px solid var(--accent);
+}
+.pitch-card:hover { border-color:var(--accent); background:#222; }
+.pitch-card-icon { font-size:24px; margin-bottom:14px; }
+.pitch-card h3 { font-size:16px; margin-bottom:10px; color:#fff; }
+.pitch-card p { font-size:13px; color:#bbb; line-height:1.65; }
+
+/* PITCH BODY */
+.pitch-body { background:var(--white); padding:48px; }
+.pitch-body-inner { max-width:780px; }
+.pitch-para {
+  font-size:clamp(15px,1.6vw,17px);
+  color:var(--ink2); line-height:1.8; margin-bottom:20px;
+}
+.pitch-para strong { color:var(--ink); }
+.pitch-para .green { color:var(--accent-dark); font-weight:600; }
+.pitch-closing {
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:clamp(18px,2.5vw,26px);
+  font-weight:800; letter-spacing:-0.02em; line-height:1.2;
+  color:var(--ink); border-left:3px solid var(--accent);
+  padding-left:20px; margin-top:32px;
+}
+.pitch-closing span { color:var(--accent); }
+
+/* ══════════════════════════
+   01 — NAME CANDIDATES
+══════════════════════════ */
+.names-wrap { background:var(--white); padding:52px 48px; }
+.names-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+  gap:14px; margin-top:36px;
+}
+.name-card {
+  border:1.5px solid var(--border); border-radius:14px;
+  padding:20px; background:var(--white);
+  position:relative; transition:all 0.22s;
+  display:flex; flex-direction:column;
+  overflow:hidden;
+}
+.name-card:hover { border-color:var(--accent); transform:translateY(-2px); box-shadow:0 8px 24px rgba(58,138,87,0.08); }
+.name-card.pick { border-color:var(--accent); background:#F3FAF6; }
+.pick-badge {
+  position:absolute; top:-1px; right:-1px;
+  background:var(--accent); color:#fff;
+  font-size:9px; font-weight:700; letter-spacing:0.1em;
+  text-transform:uppercase; padding:4px 10px;
+  border-radius:0 13px 0 8px;
+}
+.name-tag {
+  font-size:10px; letter-spacing:0.12em; text-transform:uppercase;
+  color:var(--accent); font-weight:700; margin-bottom:10px;
+}
+.name-card-title {
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:26px; font-weight:800; letter-spacing:-0.02em;
+  color:var(--ink); margin-bottom:10px;
+  word-break:break-word;
+}
+.name-card p {
+  font-size:12px; color:var(--muted); line-height:1.55;
+  flex:1;
+}
+.domain-chip {
+  display:inline-block; margin-top:12px;
+  font-size:11px; font-family:monospace;
+  background:var(--bg2); color:var(--ink2);
+  padding:4px 10px; border-radius:5px;
+  border:1px solid var(--border);
+  white-space:nowrap; overflow:hidden;
+  text-overflow:ellipsis; max-width:100%;
+}
+.names-rec { background:var(--bg); padding:0 48px 52px; }
+.names-rec-inner { padding-top:28px; }
+
+/* Pitch white dashboard */
+.pitch-dash-wrap { background:var(--bg); padding:52px 48px; border-top:1px solid #2A2A2A; }
+.pitch-dash-inner { max-width:100%; }
+.pitch-dash-label { font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--accent); font-weight:700; margin-bottom:8px; display:flex; align-items:center; gap:10px; }
+.pitch-dash-label::before { content:''; width:20px; height:2px; background:var(--accent); }
+.pitch-dash-sub { font-size:15px; color:var(--muted); max-width:500px; margin-bottom:28px; line-height:1.6; }
+
+/* ══════════════════════════
+   02 — BRAND IDENTITY
+══════════════════════════ */
+.brand-wrap { background:var(--bg); padding:52px 48px; }
+.logo-row { display:flex; gap:14px; flex-wrap:wrap; margin-top:28px; margin-bottom:48px; }
+.logo-box {
+  border-radius:12px; padding:28px 36px;
+  display:flex; align-items:center; justify-content:center;
+  border:1px solid var(--border); flex:1; min-width:180px;
+}
+.logo-text {
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-weight:800; font-size:32px; letter-spacing:-0.03em;
+}
+.swatches { display:flex; gap:12px; flex-wrap:wrap; margin:28px 0 48px; }
+.swatch { flex:1; min-width:130px; border-radius:12px; overflow:hidden; border:1px solid var(--border); }
+.swatch-top { height:80px; }
+.swatch-bottom { background:var(--white); padding:12px 14px; }
+.sw-name { font-family:'Plus Jakarta Sans',sans-serif; font-weight:700; font-size:13px; margin-bottom:2px; }
+.sw-hex { font-family:monospace; font-size:11px; color:var(--muted); }
+.sw-use { font-size:11px; color:var(--muted); margin-top:3px; }
+.type-col { display:flex; flex-direction:column; gap:14px; margin-top:28px; }
+.type-card { background:var(--white); border:1px solid var(--border); border-radius:12px; padding:28px 32px; }
+.type-lbl { font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:var(--muted); margin-bottom:14px; }
+
+/* ══════════════════════════
+   03 — VOICE & TONE
+══════════════════════════ */
+.voice-wrap { background:var(--bg); padding:52px 48px; }
+.voice-wrap .section-label { color:var(--accent); }
+.voice-wrap h2 { color:var(--ink); font-size:clamp(26px,3.5vw,38px); }
+.voice-pillars { display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:12px; margin-top:28px; }
+.pillar { background:var(--white); border:1.5px solid var(--border); border-radius:12px; padding:20px; transition:border-color 0.2s; border-top:2px solid var(--accent); }
+.pillar:hover { border-color:var(--accent); }
+.pillar h3 { font-size:14px; color:var(--ink); font-weight:700; margin-bottom:8px; }
+.pillar p { font-size:13px; color:var(--ink2); line-height:1.6; }
+.dos-donts { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:28px; }
+.dos-box { background:var(--white); border:1.5px solid var(--border); border-radius:12px; padding:22px; border-top:3px solid var(--accent); }
+.dont-box { background:var(--white); border:1.5px solid var(--border); border-radius:12px; padding:22px; border-top:3px solid var(--danger); }
+.dos-box h4 { color:var(--accent); font-family:'Plus Jakarta Sans',sans-serif; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:14px; }
+.dont-box h4 { color:var(--danger); font-family:'Plus Jakarta Sans',sans-serif; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:14px; }
+.dos-box ul,.dont-box ul { list-style:none; display:flex; flex-direction:column; gap:9px; }
+.dos-box li,.dont-box li { font-size:13px; color:var(--ink2); padding-left:18px; position:relative; line-height:1.5; }
+.dos-box li::before { content:'✓'; position:absolute; left:0; color:var(--accent); font-weight:700; }
+.dont-box li::before { content:'✗'; position:absolute; left:0; color:var(--danger); }
+.voice-ex-section { margin-top:40px; }
+.voice-ex-section h3 { font-family:'Plus Jakarta Sans',sans-serif; font-size:18px; font-weight:700; color:var(--ink); margin-bottom:20px; }
+.voice-ex { background:var(--white); border:1.5px solid var(--border); border-left:3px solid var(--accent); border-radius:12px; padding:22px 26px; margin-bottom:12px; transition:border-color 0.2s; }
+.voice-ex:hover { border-color:var(--accent); }
+.ex-lbl { font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); font-weight:700; margin-bottom:10px; }
+.ex-text { font-family:'Plus Jakarta Sans',sans-serif; font-size:16px; font-weight:500; font-style:normal; color:var(--ink); line-height:1.65; }
+.ex-note { margin-top:10px; font-size:12px; color:var(--muted); border-top:1px solid var(--border); padding-top:10px; }
+
+/* ══════════════════════════
+   04 — LANDING PAGE
+══════════════════════════ */
+.lp-wrap { background:var(--white); }
+.lp-nav { background:var(--ink); padding:14px 36px; display:flex; align-items:center; justify-content:space-between; }
+.lp-nav-logo { font-family:'Plus Jakarta Sans',sans-serif; font-weight:800; font-size:20px; letter-spacing:-0.03em; color:#fff; }
+.lp-nav-logo span { color:var(--accent); }
+.lp-nav-links { display:flex; align-items:center; gap:24px; list-style:none; }
+.lp-nav-links a { color:#777; text-decoration:none; font-size:13px; transition:color 0.2s; }
+.lp-nav-links a:hover { color:#fff; }
+.lp-nav-cta { background:var(--accent) !important; color:#fff !important; padding:9px 20px; border-radius:7px; font-family:'Plus Jakarta Sans',sans-serif; font-weight:700; font-size:13px; text-decoration:none; transition:all 0.2s; }
+.lp-nav-cta:hover { background:var(--accent-dark) !important; }
+
+.lp-hero { background:var(--ink); padding:88px 48px 72px; position:relative; overflow:hidden; }
+.lp-hero::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 75% 40%,rgba(58,138,87,0.12) 0%,transparent 60%); pointer-events:none; }
+.hero-ring { position:absolute; right:-80px; top:50%; transform:translateY(-50%); width:520px; height:520px; opacity:0.04; animation:spin 28s linear infinite; }
+@keyframes spin { to { transform:translateY(-50%) rotate(360deg); } }
+.hero-inner { max-width:100%; position:relative; z-index:1; }
+.hero-badge { display:inline-flex; align-items:center; gap:8px; background:rgba(58,138,87,0.15); border:1px solid rgba(58,138,87,0.3); border-radius:20px; padding:5px 14px; font-size:12px; color:var(--accent); font-weight:600; margin-bottom:24px; }
+.lp-h1 { font-family:'Plus Jakarta Sans',sans-serif; font-size:clamp(38px,5.5vw,70px); font-weight:800; letter-spacing:-0.03em; line-height:1.05; color:#fff; margin-bottom:20px; max-width:760px; }
+.lp-h1 .g { color:var(--accent); }
+.lp-h1 .ul { position:relative; display:inline-block; }
+.lp-h1 .ul::after { content:''; position:absolute; bottom:2px; left:0; right:0; height:3px; background:var(--accent); border-radius:2px; }
+.lp-sub { font-size:clamp(15px,1.7vw,18px); color:#bbb; max-width:500px; line-height:1.65; margin-bottom:32px; }
+.lp-sub em { color:#fff; font-style:normal; font-weight:500; }
+.hero-btns { display:flex; gap:14px; align-items:center; flex-wrap:wrap; margin-bottom:48px; }
+.btn-main { background:var(--accent); color:#fff; padding:14px 30px; border-radius:8px; font-family:'Plus Jakarta Sans',sans-serif; font-weight:700; font-size:14px; text-decoration:none; transition:all 0.2s; display:inline-block; }
+.btn-main:hover { background:var(--accent-dark); transform:translateY(-2px); box-shadow:0 8px 24px rgba(58,138,87,0.3); }
+.btn-ghost { color:#bbb; font-size:14px; text-decoration:none; transition:color 0.2s; }
+.btn-ghost:hover { color:#fff; }
+.hero-stats { display:flex; gap:0; flex-wrap:wrap; }
+.stat-item { padding-right:32px; margin-right:32px; border-right:1px solid #2A2A2A; }
+.stat-item:last-child { border-right:none; padding-right:0; margin-right:0; }
+.stat-num { font-family:'Plus Jakarta Sans',sans-serif; font-size:28px; font-weight:800; color:#fff; letter-spacing:-0.02em; line-height:1; }
+.stat-num .g { color:var(--accent); }
+.stat-lbl { font-size:12px; color:#aaa; margin-top:3px; }
+
+.lp-pain { background:var(--bg); padding:64px 48px; }
+.pain-cols { display:grid; grid-template-columns:1fr 1fr; gap:52px; align-items:start; margin-top:36px; }
+.pain-left p { font-size:clamp(14px,1.6vw,17px); color:var(--ink2); line-height:1.75; margin-bottom:16px; }
+.pain-left p strong { color:var(--ink); }
+.big-stat { font-family:'Plus Jakarta Sans',sans-serif; font-size:clamp(48px,6vw,80px); font-weight:800; letter-spacing:-0.03em; line-height:1; color:var(--accent); margin:18px 0 6px; }
+.big-stat-sub { font-size:14px; color:var(--muted); margin-bottom:20px; }
+.pain-right { display:flex; flex-direction:column; gap:12px; }
+.pain-card { background:var(--white); border:1.5px solid var(--border); border-radius:14px; padding:18px 20px; display:flex; gap:14px; align-items:flex-start; transition:border-color 0.2s; }
+.pain-card:hover { border-color:var(--accent); }
+.pain-icon { font-size:20px; flex-shrink:0; margin-top:2px; }
+.pain-card h4 { font-family:'Plus Jakarta Sans',sans-serif; font-size:14px; font-weight:700; margin-bottom:4px; }
+.pain-card p { font-size:13px; color:var(--muted); line-height:1.55; }
+
+/* HubSpot Integration Section */
+.lp-hubspot { background:var(--white); padding:72px 48px; }
+.hs-inner { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:start; }
+.hs-left h2 { margin-bottom:16px; }
+.hs-body { font-size:15px; color:var(--ink2); line-height:1.75; margin-bottom:24px; }
+.hs-body strong { color:var(--ink); }
+.hs-bullets { display:flex; flex-direction:column; gap:12px; margin-bottom:32px; }
+.hs-bullet { display:flex; gap:12px; align-items:flex-start; font-size:13px; color:var(--ink2); line-height:1.55; }
+.hs-bullet-icon { color:var(--accent); font-weight:700; flex-shrink:0; margin-top:1px; }
+.hs-connect { display:flex; align-items:center; gap:16px; margin-top:8px; }
+.hs-connect-logo { font-family:'Plus Jakarta Sans',sans-serif; font-weight:800; font-size:15px; padding:10px 16px; border-radius:8px; display:flex; align-items:center; gap:8px; }
+.hs-logo-rl { background:var(--ink); color:#fff; }
+.hs-logo-rl span { color:var(--accent); }
+.hs-logo-hs { background:#FFF4F1; color:#C0392B; border:1px solid #FFD4CC; font-size:14px; }
+.hs-connect-line { display:flex; align-items:center; gap:5px; flex:1; }
+.hs-connect-dot { width:6px; height:6px; border-radius:50%; background:var(--border); }
+
+/* HubSpot Mockup */
+.hs-right { position:sticky; top:24px; }
+.hs-mockup { background:var(--white); border:1.5px solid var(--border); border-radius:14px; overflow:hidden; box-shadow:0 8px 40px rgba(0,0,0,0.08); }
+.hs-mockup-bar { background:var(--bg2); border-bottom:1px solid var(--border); padding:12px 18px; display:flex; align-items:center; justify-content:space-between; }
+.hs-mockup-title { display:flex; align-items:center; gap:8px; font-family:'Plus Jakarta Sans',sans-serif; font-size:12px; font-weight:700; color:var(--ink); }
+.hs-mockup-sync { display:flex; align-items:center; gap:6px; font-size:11px; color:var(--accent); font-weight:600; }
+.hs-sync-dot { width:6px; height:6px; border-radius:50%; background:var(--accent); animation:blink 2s ease-in-out infinite; }
+.hs-mockup-body { padding:16px; }
+.hs-stages { display:grid; grid-template-columns:repeat(4,1fr); gap:4px; margin-bottom:14px; }
+.hs-stage { background:var(--bg); border:1px solid var(--border); border-radius:6px; padding:6px 8px; font-size:10px; font-weight:700; color:var(--muted); text-align:center; letter-spacing:0.03em; text-transform:uppercase; }
+.hs-stage.hs-stage-active { background:var(--accent-light); border-color:rgba(58,138,87,0.3); color:var(--accent-dark); }
+.hs-deals { display:flex; flex-direction:column; gap:8px; }
+.hs-deal { background:var(--bg); border:1.5px solid var(--border); border-radius:10px; padding:12px 14px; }
+.hs-deal-cold { border-left:3px solid var(--danger); }
+.hs-deal-warm { border-left:3px solid var(--accent); background:var(--accent-light); }
+.hs-deal-loop { border-left:3px solid var(--muted); }
+.hs-deal-top { display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:4px; }
+.hs-deal-name { font-family:'Plus Jakarta Sans',sans-serif; font-size:12px; font-weight:700; color:var(--ink); }
+.hs-deal-badge { font-size:9px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; padding:2px 8px; border-radius:20px; white-space:nowrap; flex-shrink:0; }
+.hs-deal-badge.cold { background:rgba(192,57,43,0.1); color:var(--danger); border:1px solid rgba(192,57,43,0.2); }
+.hs-deal-badge.warm { background:var(--accent-light); color:var(--accent-dark); border:1px solid rgba(58,138,87,0.25); }
+.hs-deal-badge.loop { background:var(--bg2); color:var(--muted); border:1px solid var(--border); }
+.hs-deal-val { font-family:'Plus Jakarta Sans',sans-serif; font-size:16px; font-weight:800; color:var(--accent); letter-spacing:-0.01em; margin-bottom:3px; }
+.hs-deal-contact { font-size:11px; color:var(--muted); margin-bottom:8px; }
+.hs-deal-action { display:flex; align-items:center; gap:7px; font-size:11px; color:var(--muted); background:var(--white); border:1px solid var(--border); border-radius:6px; padding:6px 10px; }
+.hs-deal-action.warm { color:var(--accent-dark); background:rgba(58,138,87,0.06); border-color:rgba(58,138,87,0.2); }
+.hs-deal-action.loop { color:var(--muted); }
+.hs-action-dot { width:6px; height:6px; border-radius:50%; background:var(--muted); flex-shrink:0; animation:blink 2s ease-in-out infinite; }
+.hs-action-dot.warm { background:var(--accent); }
+.hs-action-dot.loop { background:var(--muted); animation:none; }
+.hs-mockup-footer { display:flex; justify-content:space-between; align-items:center; margin-top:12px; padding-top:12px; border-top:1px solid var(--border); font-size:12px; color:var(--muted); }
+.hs-footer-stat { font-family:'Plus Jakarta Sans',sans-serif; font-weight:800; font-size:14px; color:var(--accent); }
+
+.lp-features { background:var(--white); padding:64px 48px; }
+.features-hdr { text-align:center; margin-bottom:44px; }
+.features-hdr p { font-size:16px; color:var(--muted); max-width:440px; margin:12px auto 0; line-height:1.6; }
+.features-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:16px; }
+.feat-card { background:var(--bg); border:1.5px solid var(--border); border-radius:14px; padding:24px; transition:all 0.22s; }
+.feat-card:hover { border-color:var(--accent); background:var(--white); transform:translateY(-2px); box-shadow:0 10px 28px rgba(58,138,87,0.07); }
+.feat-icon { width:42px; height:42px; border-radius:10px; background:var(--ink); display:flex; align-items:center; justify-content:center; font-size:18px; margin-bottom:16px; }
+.feat-card h3 { font-size:16px; font-weight:700; letter-spacing:-0.01em; margin-bottom:8px; }
+.feat-card p { font-size:13px; color:var(--muted); line-height:1.6; }
+.feat-pill { display:inline-block; margin-top:12px; font-size:10px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); background:var(--accent-light); border-radius:20px; padding:3px 10px; }
+
+.lp-differentiator { background:var(--bg2); padding:64px 48px; }
+.diff-inner { max-width:100%; }
+.diff-inner h2 { color:var(--ink); margin-bottom:8px; }
+.diff-inner .section-label { color:var(--accent); }
+.diff-sub { color:var(--ink2); font-size:15px; max-width:560px; margin-bottom:36px; line-height:1.65; }
+.diff-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:14px; }
+.diff-card { background:var(--white); border:1.5px solid var(--border); border-radius:14px; padding:24px; border-top:2px solid var(--accent); transition:all 0.2s; }
+.diff-card:hover { border-color:var(--accent); transform:translateY(-2px); box-shadow:0 8px 24px rgba(58,138,87,0.08); }
+.diff-num { font-family:'Plus Jakarta Sans',sans-serif; font-size:36px; font-weight:800; color:var(--border); letter-spacing:-0.03em; line-height:1; margin-bottom:12px; }
+.diff-card h3 { font-size:15px; font-weight:700; color:var(--ink); margin-bottom:8px; }
+.diff-card p { font-size:13px; color:var(--muted); line-height:1.6; }
+
+.lp-how { background:var(--bg); padding:64px 48px; }
+.lp-how h2 { margin-bottom:8px; }
+.how-sub { color:var(--muted); font-size:15px; max-width:440px; margin:8px 0 36px; }
+.how-steps { display:grid; grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); gap:2px; }
+.how-step { background:var(--white); padding:24px 20px; border:1px solid var(--border); border-radius:4px; }
+.step-n { font-family:'Plus Jakarta Sans',sans-serif; font-size:44px; font-weight:800; color:var(--border); letter-spacing:-0.03em; line-height:1; margin-bottom:12px; }
+.how-step h3 { font-size:13px; font-weight:700; margin-bottom:6px; color:var(--ink); }
+.how-step p { font-size:12px; color:var(--muted); line-height:1.6; }
+.step-tag { display:inline-block; margin-top:10px; font-size:10px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); }
+
+.lp-dashboard { background:var(--accent); padding:64px 48px; }
+.dash-inner { display:grid; grid-template-columns:1fr 1fr; gap:52px; align-items:center; }
+.dash-left h2 { font-size:clamp(24px,3vw,38px); color:#fff; letter-spacing:-0.02em; line-height:1.1; margin-bottom:16px; }
+.dash-left p { font-size:16px; color:rgba(255,255,255,0.72); line-height:1.65; }
+.dash-right { display:flex; flex-direction:column; gap:10px; }
+.dash-stat { background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.15); border-radius:10px; padding:14px 18px; display:flex; justify-content:space-between; align-items:center; }
+.dash-lbl { font-size:13px; color:rgba(255,255,255,0.65); }
+.dash-val { font-family:'Plus Jakarta Sans',sans-serif; font-size:22px; font-weight:800; color:#fff; letter-spacing:-0.02em; }
+
+.lp-quote { background:var(--bg2); padding:56px 48px; border-top:1px solid var(--border); }
+.quote-inner { max-width:680px; margin:0 auto; text-align:center; }
+.lp-quote blockquote { font-family:'Plus Jakarta Sans',sans-serif; font-size:clamp(18px,2.5vw,26px); font-weight:600; font-style:normal; color:var(--ink); line-height:1.45; margin-bottom:18px; }
+.lp-quote blockquote span { color:var(--accent); }
+.lp-quote cite { font-size:12px; color:var(--muted); font-style:normal; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; }
+
+/* Mini Revenue Dashboard */
+.lp-mini-dash { background:var(--bg); padding:64px 48px; }
+.mini-dash-inner { max-width:100%; }
+.mini-dash-inner .section-label { color:var(--accent); }
+.mini-dash-inner h2 { color:var(--ink); margin-bottom:8px; }
+.mini-dash-sub { color:var(--muted); font-size:15px; max-width:480px; margin-bottom:36px; line-height:1.6; }
+.dash-ui {
+  background:var(--white);
+  border:1.5px solid var(--border);
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 8px 40px rgba(0,0,0,0.07);
+}
+.dash-ui-topbar {
+  background:var(--bg2);
+  border-bottom:1px solid var(--border);
+  padding:14px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.dash-ui-title {
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:13px; font-weight:700; color:var(--ink);
+}
+.dash-ui-date { font-size:12px; color:var(--muted); }
+.dash-ui-body { padding:24px; display:flex; flex-direction:column; gap:16px; background:var(--white); }
+.dash-ui-row { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+.dash-tile {
+  background:var(--bg);
+  border:1.5px solid var(--border);
+  border-radius:12px;
+  padding:18px 20px;
+}
+.dash-tile-label { font-size:11px; color:var(--muted); letter-spacing:0.05em; text-transform:uppercase; margin-bottom:8px; }
+.dash-tile-val {
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:28px; font-weight:800;
+  letter-spacing:-0.02em; line-height:1;
+}
+.dash-tile-val.green { color:var(--accent); }
+.dash-tile-val.white { color:var(--ink); }
+.dash-tile-sub { font-size:11px; color:var(--muted); margin-top:6px; }
+.dash-tile-sub.up { color:var(--accent); font-weight:600; }
+.dash-leads { display:flex; flex-direction:column; gap:8px; }
+.dash-lead-row {
+  background:var(--bg);
+  border:1.5px solid var(--border);
+  border-radius:10px;
+  padding:14px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  transition:border-color 0.2s;
+}
+.dash-lead-row:hover { border-color:var(--accent); }
+.lead-info { display:flex; flex-direction:column; gap:2px; flex:1; min-width:0; }
+.lead-name { font-family:'Plus Jakarta Sans',sans-serif; font-size:13px; font-weight:700; color:var(--ink); }
+.lead-detail { font-size:12px; color:var(--muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.lead-val {
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:14px; font-weight:700; color:var(--accent);
+  white-space:nowrap;
+}
+.lead-status {
+  font-size:10px; font-weight:700; letter-spacing:0.08em;
+  text-transform:uppercase; padding:3px 10px;
+  border-radius:20px; white-space:nowrap;
+}
+.status-cold { background:rgba(192,57,43,0.1); color:var(--danger); border:1px solid rgba(192,57,43,0.2); }
+.status-warm { background:var(--accent-light); color:var(--accent-dark); border:1px solid rgba(58,138,87,0.25); }
+.status-loop { background:var(--bg2); color:var(--muted); border:1px solid var(--border); }
+
+.lp-wowstat { background:var(--accent); padding:64px 48px; text-align:center; }
+.wow-inner { max-width:660px; margin:0 auto; }
+.wow-num { font-family:'Plus Jakarta Sans',sans-serif; font-size:clamp(56px,8vw,100px); font-weight:800; letter-spacing:-0.04em; color:#fff; line-height:1; }
+.wow-sub { font-size:clamp(14px,1.6vw,17px); color:rgba(255,255,255,0.8); margin-top:14px; line-height:1.7; }
+.wow-sub strong { color:#fff; font-weight:700; }
+
+.lp-testimonials { background:var(--bg2); padding:64px 48px; border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+.testi-lbl { text-align:center; font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:var(--muted); margin-bottom:28px; }
+.testi-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:16px; }
+.testi { background:var(--white); border:1.5px solid var(--border); border-radius:14px; padding:22px; }
+.testi-text { font-family:'DM Sans',sans-serif; font-size:14px; font-style:normal; color:var(--ink2); line-height:1.65; margin-bottom:16px; }
+.testi-text span { color:var(--accent); font-weight:600; }
+.testi-author { display:flex; align-items:center; gap:10px; }
+.testi-av { width:34px; height:34px; border-radius:50%; background:var(--accent); display:flex; align-items:center; justify-content:center; font-family:'Plus Jakarta Sans',sans-serif; font-weight:700; font-size:13px; color:#fff; flex-shrink:0; }
+.testi-name { font-family:'Plus Jakarta Sans',sans-serif; font-size:13px; font-weight:700; color:var(--ink); }
+.testi-role { font-size:12px; color:var(--muted); }
+
+.lp-pricing { background:var(--bg); padding:64px 48px; }
+.pricing-hdr { text-align:center; margin-bottom:40px; }
+.pricing-hdr p { font-size:16px; color:var(--muted); margin-top:10px; }
+.pricing-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+.p-card { background:var(--white); border:1.5px solid var(--border); border-radius:14px; overflow:hidden; transition:all 0.22s; display:flex; flex-direction:column; }
+.p-card:hover { transform:translateY(-3px); box-shadow:0 14px 40px rgba(0,0,0,0.06); }
+.p-card.feat { border-color:var(--accent); border-width:2px; }
+.p-top { padding:24px 22px 20px; border-bottom:1px solid var(--border); }
+.p-card.feat .p-top { background:var(--ink); }
+.p-badge { display:inline-block; background:var(--accent); color:#fff; font-size:9px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; padding:3px 10px; border-radius:20px; margin-bottom:10px; }
+.p-name { font-family:'Plus Jakarta Sans',sans-serif; font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); margin-bottom:8px; }
+.p-card.feat .p-name { color:#555; }
+.p-price { font-family:'Plus Jakarta Sans',sans-serif; font-size:42px; font-weight:800; letter-spacing:-0.03em; color:var(--ink); line-height:1; }
+.p-card.feat .p-price { color:#fff; }
+.p-price sub { font-size:14px; font-weight:400; color:var(--muted); letter-spacing:0; }
+.p-desc { font-size:13px; color:var(--muted); margin-top:8px; }
+.p-card.feat .p-desc { color:#555; }
+.p-feats { padding:20px 22px; list-style:none; display:flex; flex-direction:column; gap:9px; flex:1; }
+.p-feats li { font-size:13px; color:var(--ink2); display:flex; gap:9px; align-items:flex-start; }
+.p-feats li::before { content:'✓'; color:var(--accent); font-weight:700; flex-shrink:0; }
+.p-cta-wrap { padding:0 22px 22px; }
+.p-btn { width:100%; padding:13px; border-radius:8px; font-family:'Plus Jakarta Sans',sans-serif; font-weight:700; font-size:14px; border:2px solid var(--ink); background:transparent; color:var(--ink); cursor:pointer; transition:all 0.2s; }
+.p-btn:hover { background:var(--ink); color:#fff; }
+.p-card.feat .p-btn { background:var(--accent); border-color:var(--accent); color:#fff; }
+.p-card.feat .p-btn:hover { background:var(--accent-dark); border-color:var(--accent-dark); }
+.pricing-fine { text-align:center; margin-top:20px; font-size:13px; color:var(--muted); }
+
+.lp-faq { background:var(--white); padding:64px 48px; }
+.faq-inner { max-width:680px; }
+.faq-list { margin-top:32px; }
+.faq-item { border-bottom:1px solid var(--border); padding:20px 0; }
+.faq-q { font-family:'Plus Jakarta Sans',sans-serif; font-size:16px; font-weight:700; letter-spacing:-0.01em; margin-bottom:8px; }
+.faq-a { font-size:14px; color:var(--muted); line-height:1.75; }
+.faq-a strong { color:var(--ink); }
+
+.lp-footer-cta { background:var(--ink); padding:88px 48px; text-align:center; position:relative; overflow:hidden; }
+.lp-footer-cta::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at center,rgba(58,138,87,0.12) 0%,transparent 65%); pointer-events:none; }
+.ftc-inner { position:relative; z-index:1; max-width:620px; margin:0 auto; }
+.ftc-h2 { font-family:'Plus Jakarta Sans',sans-serif; font-size:clamp(30px,4.5vw,56px); font-weight:800; letter-spacing:-0.03em; line-height:1.05; color:#fff; margin-bottom:18px; }
+.ftc-h2 span { color:var(--accent); }
+.ftc-sub { font-size:16px; color:#555; margin-bottom:36px; line-height:1.6; }
+.ftc-fine { margin-top:16px; font-size:12px; color:#888; }
+
+.lp-footer { background:#111; padding:24px 48px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; border-top:1px solid #1E1E1E; }
+.ft-logo { font-family:'Plus Jakarta Sans',sans-serif; font-weight:800; font-size:16px; color:#fff; letter-spacing:-0.02em; }
+.ft-logo span { color:var(--accent); }
+.ft-links { display:flex; gap:20px; list-style:none; }
+.ft-links a { color:#444; text-decoration:none; font-size:12px; transition:color 0.2s; }
+.ft-links a:hover { color:var(--accent); }
+.ft-copy { font-size:12px; color:#333; }
+
+/* RESPONSIVE */
+@media (max-width:860px) {
+  :root { --sidebar-w:0px; }
+  .sidebar { display:none; }
+  .main { margin-left:0; }
+  .pain-cols,.dash-inner,.dos-donts,.pricing-grid,.hs-inner { grid-template-columns:1fr; }
+  .pitch-3col { grid-template-columns:1fr; }
+  .hero-stats { gap:16px; }
+  .stat-item { border-right:none; }
+  .section-wrap,.names-wrap,.brand-wrap,.voice-wrap,
+  .pitch-hero,.pitch-cards,.pitch-body,.names-rec,
+  .lp-pain,.lp-features,.lp-differentiator,.lp-how,
+  .lp-dashboard,.lp-quote,.lp-wowstat,.lp-testimonials,
+  .lp-pricing,.lp-faq,.lp-footer-cta,.lp-footer,
+  .lp-hero,.lp-nav { padding-left:20px; padding-right:20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════ SIDEBAR ══════════ -->
+<aside class="sidebar">
+  <div class="sidebar-logo">
+    <div class="sidebar-logo-text">Rev<span>Loop</span></div>
+    <div class="sidebar-logo-sub">Brand Package</div>
+  </div>
+  <nav class="sidebar-nav">
+    <button class="nav-btn active" onclick="showTab('pitch')">
+      <span class="nav-icon">⚡</span> Elevator Pitch
+      <span class="nav-num">00</span>
+    </button>
+    <button class="nav-btn" onclick="showTab('names')">
+      <span class="nav-icon">🏷</span> Name Candidates
+      <span class="nav-num">01</span>
+    </button>
+    <button class="nav-btn" onclick="showTab('brand')">
+      <span class="nav-icon">🎨</span> Brand Identity
+      <span class="nav-num">02</span>
+    </button>
+    <button class="nav-btn" onclick="showTab('voice')">
+      <span class="nav-icon">🎙</span> Voice &amp; Tone
+      <span class="nav-num">03</span>
+    </button>
+    <button class="nav-btn" onclick="showTab('landing')">
+      <span class="nav-icon">🖥</span> Landing Page
+      <span class="nav-num">04</span>
+    </button>
+  </nav>
+  <div class="sidebar-footer">
+    <div>Version 1.0</div>
+    <div>Confidential</div>
+    <div style="margin-top:6px;">© 2026 <span>RevLoop</span></div>
+  </div>
+</aside>
+
+<!-- ══════════ MAIN ══════════ -->
+<main class="main">
+
+  <!-- ══ 00 — ELEVATOR PITCH ══ -->
+  <div id="tab-pitch" class="tab-panel active">
+    <div class="pitch-hero">
+      <div class="pitch-blob"></div>
+      <div class="pitch-blob2"></div>
+      <div class="pitch-inner">
+        <div class="pitch-eyebrow">
+          <div class="pitch-dot"></div>
+          Revenue Recovery AI — For Agencies &amp; Consultants
+        </div>
+        <h1 class="pitch-h1">
+          The revenue loop that<br><span class="g">never closes.</span>
+        </h1>
+        <p class="pitch-tagline">
+          RevLoop is the silent sales assistant that finds every cold deal in your inbox, writes follow-ups that sound exactly like you — and keeps sending them <em>for weeks, months, even a year</em> — until the revenue flows back in.
+        </p>
+        <div class="pitch-stats">
+          <div class="pitch-stat">
+            <div class="pitch-stat-num"><span class="g">$3,200</span></div>
+            <div class="pitch-stat-lbl">avg. recovered in 30 days</div>
+          </div>
+          <div class="pitch-stat">
+            <div class="pitch-stat-num">42<span class="g">%</span></div>
+            <div class="pitch-stat-lbl">of proposals lost to silence</div>
+          </div>
+          <div class="pitch-stat">
+            <div class="pitch-stat-num">3<span class="g">min</span></div>
+            <div class="pitch-stat-lbl">to connect &amp; go live</div>
+          </div>
+          <div class="pitch-stat">
+            <div class="pitch-stat-num">1000<span class="g">s</span></div>
+            <div class="pitch-stat-lbl">of salespeople trained on</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pitch-cards">
+      <div class="pitch-3col">
+        <div class="pitch-card">
+          <div class="pitch-card-icon">🧠</div>
+          <h3>Trained on the best closers in the world</h3>
+          <p>RevLoop's AI is trained on the strategies of the world's top sales gurus — tested across thousands of real salespeople. Every follow-up is built on what actually closes deals, not generic templates.</p>
+        </div>
+        <div class="pitch-card">
+          <div class="pitch-card-icon">🔁</div>
+          <h3>The loop never closes</h3>
+          <p>Short loops for cold leads. Medium loops for slow decisions. Evergreen loops for deals that need a year. RevLoop keeps every conversation alive — automatically, personally, forever.</p>
+        </div>
+        <div class="pitch-card">
+          <div class="pitch-card-icon">💰</div>
+          <h3>Revenue you can see every morning</h3>
+          <p>Your dashboard shows exactly how much revenue is still in reach — deal by deal, dollar by dollar. Not a vanity metric. A daily reminder that the loop is working.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- WHITE DASHBOARD IN PITCH -->
+    <div class="pitch-dash-wrap">
+      <div class="pitch-dash-inner">
+        <div class="pitch-dash-label">Live Revenue Dashboard</div>
+        <p class="pitch-dash-sub">Every morning you open RevLoop and see exactly how much revenue is still in reach — deal by deal, dollar by dollar.</p>
+        <div class="dash-ui">
+          <div class="dash-ui-topbar">
+            <div class="dash-ui-title">RevLoop Dashboard</div>
+            <div class="dash-ui-date">Monday, May 4 — Good morning 👋</div>
+          </div>
+          <div class="dash-ui-body">
+            <div class="dash-ui-row">
+              <div class="dash-tile">
+                <div class="dash-tile-label">💰 Revenue Recovered</div>
+                <div class="dash-tile-val green">$14,200</div>
+                <div class="dash-tile-sub up">↑ $3,800 this week</div>
+              </div>
+              <div class="dash-tile">
+                <div class="dash-tile-label">📡 Revenue In Reach</div>
+                <div class="dash-tile-val green">$67,500</div>
+                <div class="dash-tile-sub">across 23 open loops</div>
+              </div>
+              <div class="dash-tile">
+                <div class="dash-tile-label">🔁 Loops Running</div>
+                <div class="dash-tile-val white">23</div>
+                <div class="dash-tile-sub up">8 re-engaged this month</div>
+              </div>
+            </div>
+            <div class="dash-leads">
+              <div class="dash-lead-row">
+                <div class="lead-info">
+                  <div class="lead-name">Sarah K. — Rebrand Project</div>
+                  <div class="lead-detail">Last contact 11 days ago · Follow-up #2 queued for 9am tomorrow</div>
+                </div>
+                <div class="lead-val">$8,500</div>
+                <div class="lead-status status-cold">Cold</div>
+              </div>
+              <div class="dash-lead-row">
+                <div class="lead-info">
+                  <div class="lead-name">Marcus T. — Q3 Campaign</div>
+                  <div class="lead-detail">Replied this morning · Moved back to active</div>
+                </div>
+                <div class="lead-val">$12,000</div>
+                <div class="lead-status status-warm">Re-engaged</div>
+              </div>
+              <div class="dash-lead-row">
+                <div class="lead-info">
+                  <div class="lead-name">Jade L. — Website Redesign</div>
+                  <div class="lead-detail">Evergreen Loop · 6-month check-in sent last week</div>
+                </div>
+                <div class="lead-val">$22,000</div>
+                <div class="lead-status status-loop">Looping</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pitch-body">
+      <div class="pitch-body-inner">
+        <div class="section-label">The Full Pitch</div>
+        <h2 style="margin-bottom:28px;">Why RevLoop exists.</h2>
+        <p class="pitch-para">
+          <strong>You wrote the proposal. You sent the pitch. Then life happened — and that revenue quietly walked out the door.</strong> Not because the prospect said no. Because nobody followed up. The average agency loses 42% of its proposals not because the deal was dead — but because the conversation went cold and stayed that way.
+        </p>
+        <p class="pitch-para">
+          RevLoop fixes that automatically. The moment a deal goes cold in your Gmail, RevLoop catches it, reads the entire thread, learns exactly how you write, and drafts a follow-up <span class="green">so specific and so on-brand</span> that your prospect thinks you wrote it yourself at your desk at midnight. Your booking link is already in there. The context from your last conversation is already in there. Everything is already in there.
+        </p>
+        <p class="pitch-para">
+          <strong>Everyone talks about closers. Nobody talks about the deals that stalled at the five yard line.</strong> RevLoop is built for exactly those deals. The ones everyone else gave up on. Think of it as your own dedicated revenue recovery team — except this team never sleeps, never forgets, and never lets a single deal slip through the cracks.
+        </p>
+        <p class="pitch-para">
+          And here's the part that separates RevLoop from every other follow-up tool on the market: <span class="green">the AI is trained on the strategies of the world's top sales gurus</span> — tested and refined across thousands of real salespeople. Every follow-up is built on what actually works to re-engage a cold prospect, not generic check-in templates that get deleted on sight.
+        </p>
+        <p class="pitch-para">
+          Every morning you open RevLoop and see exactly how much revenue is still in reach — not buried in a spreadsheet, not lost in your inbox — right there, deal by deal, dollar by dollar, telling you precisely where your next dollar is coming from. On average, users recover <strong>$3,200 in previously lost revenue within their first 30 days.</strong>
+        </p>
+
+        <div class="pitch-closing">
+          "The loop never ends.<br><span>And neither does your revenue."</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ 01 — NAMES ══ -->
+  <div id="tab-names" class="tab-panel">
+    <div class="names-wrap">
+      <div class="section-label">The Shortlist</div>
+      <h2>All names. One universe.</h2>
+      <p style="color:var(--muted);max-width:540px;margin-top:10px;">Every name lives in the revenue + loop space. Two syllables, domain-checkable, and built to grow. Pick one and own it.</p>
+
+      <div class="names-grid">
+        <div class="name-card pick">
+          <div class="pick-badge">Top Pick</div>
+          <div class="name-tag">Bold &amp; Revenue-First</div>
+          <div class="name-card-title">RevLoop</div>
+          <p>Revenue + loop in two clean syllables. Says everything without saying any of it directly. Modern, scalable, unforgettable.</p>
+          <div class="domain-chip">revloop.io</div>
+        </div>
+        <div class="name-card pick">
+          <div class="pick-badge">Top Pick</div>
+          <div class="name-tag">Philosophy-Led</div>
+          <div class="name-card-title">OpenLoop</div>
+          <p>No deal ever fully closes. Also an engineering term for a system that never stops running. Strong double meaning built right in.</p>
+          <div class="domain-chip">openloop.io</div>
+        </div>
+        <div class="name-card pick">
+          <div class="pick-badge">Top Pick</div>
+          <div class="name-tag">Action-Oriented</div>
+          <div class="name-card-title">Reloop</div>
+          <p>The act of re-entering a stalled deal. More verb than brand name. "I relooped that prospect from 3 months ago and they signed."</p>
+          <div class="domain-chip">reloop.co</div>
+        </div>
+        <div class="name-card">
+          <div class="name-tag">Punchy / App-Like</div>
+          <div class="name-card-title">Loopr</div>
+          <p>Dropped-e modern SaaS naming. Short, memorable, slightly edgy. Works perfectly as an app name people say out loud.</p>
+          <div class="domain-chip">getloopr.com</div>
+        </div>
+        <div class="name-card">
+          <div class="name-tag">Revenue-Forward</div>
+          <div class="name-card-title">LoopRev</div>
+          <p>Flipped RevLoop. More unusual — could stand out harder. Less intuitive but more distinctive on a business card.</p>
+          <div class="domain-chip">looprev.io</div>
+        </div>
+        <div class="name-card">
+          <div class="name-tag">Friendly &amp; Broad</div>
+          <div class="name-card-title">Looply</div>
+          <p>Most approachable in the set. Great for a wide SMB audience. Feels like a tool a friend casually recommends over coffee.</p>
+          <div class="domain-chip">looply.co</div>
+        </div>
+        <div class="name-card">
+          <div class="name-tag">Bold Statement</div>
+          <div class="name-card-title">NeverLoop</div>
+          <p>The loop never closes. Provocative and cryptic. Works even better as a tagline — keep it in the toolkit either way.</p>
+          <div class="domain-chip">neverloop.com</div>
+        </div>
+        <div class="name-card">
+          <div class="name-tag">Problem-Solver</div>
+          <div class="name-card-title">Unloop</div>
+          <p>Breaking the cycle of silence — undoing the stall. Different energy from the rest. Strong "fix what's broken" connotation.</p>
+          <div class="domain-chip">unloop.io</div>
+        </div>
+        <div class="name-card">
+          <div class="name-tag">Outcome-Led</div>
+          <div class="name-card-title">LoopLift</div>
+          <p>Explicitly tied to the outcome — revenue lift from keeping loops open. Slightly longer but crystal clear on the promise.</p>
+          <div class="domain-chip">looplift.com</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="names-rec">
+      <div class="names-rec-inner">
+        <div class="highlight-box">
+          <strong>Recommendation:</strong> Go with <strong>RevLoop</strong> for confident, revenue-first positioning. Choose <strong>OpenLoop</strong> if the philosophy leads. Pick <strong>Reloop</strong> if you want the name to feel like a verb — something you actively do to a dead deal. All three pass the two-syllable test, survive a crowded inbox, and scale to enterprise without embarrassment.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ 02 — BRAND ══ -->
+  <div id="tab-brand" class="tab-panel">
+    <div class="brand-wrap">
+
+      <div class="section-label">Logo Lockup</div>
+      <h2>Clean. Bold. Unmistakable.</h2>
+      <p style="color:var(--muted);max-width:480px;margin-top:8px;">Set in Plus Jakarta Sans ExtraBold. "Rev" in white or black, "Loop" in Revenue Green. Works across all backgrounds.</p>
+      <div class="logo-row">
+        <div class="logo-box" style="background:var(--ink);">
+          <div class="logo-text" style="color:#fff;">Rev<span style="color:var(--accent);">Loop</span></div>
+        </div>
+        <div class="logo-box" style="background:var(--white);">
+          <div class="logo-text" style="color:var(--ink);">Rev<span style="color:var(--accent);">Loop</span></div>
+        </div>
+        <div class="logo-box" style="background:var(--accent);">
+          <div class="logo-text" style="color:#fff;">Rev<span style="color:rgba(255,255,255,0.6);">Loop</span></div>
+        </div>
+      </div>
+
+      <div class="section-label">Color System</div>
+      <h2>One accent. Five neutrals.</h2>
+      <p style="color:var(--muted);max-width:500px;margin-top:8px;">Forest green does all the heavy lifting. Everything else is neutral. Simple, ownable, impossible to get wrong.</p>
+      <div class="swatches">
+        <div class="swatch">
+          <div class="swatch-top" style="background:#3A8A57;"></div>
+          <div class="swatch-bottom">
+            <div class="sw-name">Revenue Green</div>
+            <div class="sw-hex">#3A8A57</div>
+            <div class="sw-use">The one accent — CTAs, logo, all key moments</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-top" style="background:#1A1A1A;"></div>
+          <div class="swatch-bottom">
+            <div class="sw-name">Ink Black</div>
+            <div class="sw-hex">#1A1A1A</div>
+            <div class="sw-use">Hero backgrounds, nav, dark sections</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-top" style="background:#F5F2ED;"></div>
+          <div class="swatch-bottom">
+            <div class="sw-name">Warm Cream</div>
+            <div class="sw-hex">#F5F2ED</div>
+            <div class="sw-use">Page backgrounds, breathing room</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-top" style="background:#FEFCF9;"></div>
+          <div class="swatch-bottom">
+            <div class="sw-name">Off White</div>
+            <div class="sw-hex">#FEFCF9</div>
+            <div class="sw-use">Cards, surfaces, light sections</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-top" style="background:#EBF5EF;"></div>
+          <div class="swatch-bottom">
+            <div class="sw-name">Soft Mint</div>
+            <div class="sw-hex">#EBF5EF</div>
+            <div class="sw-use">Success states, pills, highlight boxes</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-label">Typography</div>
+      <h2>Two fonts. Total clarity.</h2>
+      <div class="type-col">
+        <div class="type-card">
+          <div class="type-lbl">Display / Headlines — Plus Jakarta Sans 800</div>
+          <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(28px,4vw,48px);font-weight:800;letter-spacing:-0.02em;line-height:1.08;color:var(--ink);">The loop never ends.<br>And neither does <span style="color:var(--accent);">your revenue.</span></div>
+        </div>
+        <div class="type-card">
+          <div class="type-lbl">Subheadings / Cards — Plus Jakarta Sans 700</div>
+          <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:20px;font-weight:700;letter-spacing:-0.01em;line-height:1.2;color:var(--ink);">Voice Match — Every follow-up sounds exactly like you wrote it yourself.</div>
+        </div>
+        <div class="type-card">
+          <div class="type-lbl">Body / UI — DM Sans 400</div>
+          <div style="font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.75;color:var(--ink2);max-width:620px;">RevLoop finds every cold deal in your inbox, learns exactly how you write, and sends follow-ups so specific your prospects think you wrote them at midnight on a Tuesday. You didn't. We did. You're welcome.</div>
+        </div>
+        <div class="type-card">
+          <div class="type-lbl">Pull Quotes / Editorial — Instrument Serif Italic</div>
+          <div style="font-family:'Instrument Serif',serif;font-size:clamp(18px,2.5vw,26px);line-height:1.5;color:var(--ink);">"The best time to follow up was last week. The second best time is right now — and we're already on it."</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ 03 — VOICE ══ -->
+  <div id="tab-voice" class="tab-panel">
+    <div class="voice-wrap">
+      <div class="section-label">Brand Personality</div>
+      <h2 style="color:var(--ink);">Confident. Cheeky.<br>Obsessed with your revenue.</h2>
+
+      <div class="voice-pillars">
+        <div class="pillar">
+          <h3>Confident, Not Arrogant</h3>
+          <p>RevLoop knows it works. Revenue numbers do the talking. State facts — and the facts are wild enough to sell themselves without shouting.</p>
+        </div>
+        <div class="pillar">
+          <h3>Cheeky, Not Silly</h3>
+          <p>Sharp, knowing humor. Like the brilliant colleague who's also really funny and makes you realize you've been leaving money on the table this whole time.</p>
+        </div>
+        <div class="pillar">
+          <h3>Sales-Obsessed</h3>
+          <p>Built on real sales science — trained on the strategies of the world's top closers. Every word is chosen because it actually moves deals forward.</p>
+        </div>
+        <div class="pillar">
+          <h3>Revenue-First Always</h3>
+          <p>Every message ladders back to dollars recovered. Not features. Not automations. The money that was already yours but quietly walked out the door.</p>
+        </div>
+      </div>
+
+      <div class="dos-donts">
+        <div class="dos-box">
+          <h4>✓ RevLoop sounds like this</h4>
+          <ul>
+            <li>"Your deals aren't dead. You just stopped following up."</li>
+            <li>"We write the follow-up. You take the credit."</li>
+            <li>"42% of proposals fail because nobody followed up. Wild, right?"</li>
+            <li>"Connect Gmail. Go touch grass. We've got the rest."</li>
+            <li>"Everyone talks about closers. Nobody talks about the five yard line."</li>
+            <li>"The loop never ends. And neither does your revenue."</li>
+            <li>"Trained on thousands of salespeople and the world's best closers."</li>
+          </ul>
+        </div>
+        <div class="dont-box">
+          <h4>✗ RevLoop never says</h4>
+          <ul>
+            <li>"Leverage AI-powered synergies to optimize your pipeline"</li>
+            <li>"Just checking in to see if you had a chance to review"</li>
+            <li>"Our cutting-edge machine learning algorithms..."</li>
+            <li>"Streamline your workflow with seamless integrations"</li>
+            <li>"We hope this email finds you well"</li>
+            <li>"Holistic revenue enablement solution"</li>
+            <li>Anything containing the word "utilize"</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="voice-ex-section">
+        <h3>Voice in action — real copy examples</h3>
+
+        <div class="voice-ex">
+          <div class="ex-lbl">Homepage hero</div>
+          <div class="ex-text">"You wrote the proposal. You sent the pitch. Then life happened — and that revenue quietly walked out the door. RevLoop goes and gets it back."</div>
+          <div class="ex-note">Pure outcome. No feature mentioned. Empathetic and immediately useful.</div>
+        </div>
+        <div class="voice-ex">
+          <div class="ex-lbl">Sales guru differentiator</div>
+          <div class="ex-text">"RevLoop's AI isn't trained on generic email templates. It's trained on the strategies of the world's top sales closers — tested across thousands of real salespeople. Every follow-up is built on what actually works, not what sounds polite."</div>
+          <div class="ex-note">This is the line that separates RevLoop from every tool in the market. Lead with it.</div>
+        </div>
+        <div class="voice-ex">
+          <div class="ex-lbl">Voice Match feature</div>
+          <div class="ex-text">"RevLoop reads six months of your sent emails and figures out exactly how you write. Short sentences? Got it. Sign off with just your first name? Done. Occasional em dash? Obviously. Every follow-up sounds like you — not like a robot drafted it at 3am."</div>
+          <div class="ex-note">Specific, self-aware, slightly funny. Builds trust through obsessive detail.</div>
+        </div>
+        <div class="voice-ex">
+          <div class="ex-lbl">Revenue dashboard — wow factor</div>
+          <div class="ex-text">"Every morning you open RevLoop and see exactly how much revenue is still in reach. Not buried in a spreadsheet. Right there — deal by deal, dollar by dollar — telling you precisely where your next dollar is coming from."</div>
+          <div class="ex-note">Visceral and visual. Creates a daily emotional habit that makes people never cancel.</div>
+        </div>
+        <div class="voice-ex">
+          <div class="ex-lbl">The big idea — revenue team</div>
+          <div class="ex-text">"Everyone talks about closers. Nobody talks about the deals that stalled at the five yard line — the proposals that went cold, the conversations that went quiet, the revenue that was this close. RevLoop is built for those deals. The ones everyone else gave up on."</div>
+          <div class="ex-note">Empowering and slightly dramatic in a way that earns it. Makes the user feel like they finally have backup.</div>
+        </div>
+        <div class="voice-ex">
+          <div class="ex-lbl">North star — use everywhere</div>
+          <div class="ex-text">"The loop never ends. And neither does your revenue."</div>
+          <div class="ex-note">The brand's permanent closing line. Homepage, email footers, pitch decks, onboarding, the last slide of everything.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ 04 — LANDING PAGE ══ -->
+  <div id="tab-landing" class="tab-panel">
+    <div class="lp-wrap">
+
+      <nav class="lp-nav">
+        <div class="lp-nav-logo">Rev<span>Loop</span></div>
+        <ul class="lp-nav-links">
+          <li><a href="#">How it works</a></li>
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#" class="lp-nav-cta">Start free — 14 days</a></li>
+        </ul>
+      </nav>
+
+      <!-- HERO -->
+      <section class="lp-hero">
+        <svg class="hero-ring" viewBox="0 0 200 200" fill="none">
+          <circle cx="100" cy="100" r="90" stroke="white" stroke-width="0.4"/>
+          <circle cx="100" cy="100" r="65" stroke="white" stroke-width="0.4"/>
+          <circle cx="100" cy="100" r="40" stroke="white" stroke-width="0.8"/>
+          <path d="M100 10 A90 90 0 1 1 99.9 10" stroke="white" stroke-width="1" fill="none" stroke-dasharray="5 10"/>
+        </svg>
+        <div class="hero-inner">
+          <div class="hero-badge">
+            <div class="pitch-dot"></div>
+            For SDRs, solo founders &amp; teams without enough salespeople
+          </div>
+          <h1 class="lp-h1">
+            Your deals aren't dead.<br>
+            You just <span class="g ul">stopped</span><br>
+            following up.
+          </h1>
+          <p class="lp-sub">RevLoop plugs into Gmail and HubSpot, finds every cold deal, and sends follow-ups <em>so specific your prospects think you wrote them yourself.</em> Built on the strategies of the world's top closers. Tested across thousands of SDRs and sales teams.</p>
+          <div class="hero-btns">
+            <a href="#" class="btn-main">Start recovering revenue — free</a>
+            <a href="#" class="btn-ghost">See how it works →</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <div class="stat-num"><span class="g">$3,200</span></div>
+              <div class="stat-lbl">avg. recovered in 30 days</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num">42<span class="g">%</span></div>
+              <div class="stat-lbl">of proposals lost to silence</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num">1000<span class="g">s</span></div>
+              <div class="stat-lbl">of salespeople trained on</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PAIN -->
+      <section class="lp-pain">
+        <div class="section-label">Who This Is For</div>
+        <h2>SDRs who can't keep up.<br>Founders who can't afford one.</h2>
+        <div class="pain-cols">
+          <div class="pain-left">
+            <p><strong>If you're an SDR:</strong> you have a quota, a CRM full of deals, and not enough hours in the day. Deals go cold while you're busy working other leads. RevLoop works your HubSpot pipeline automatically — following up on every cold deal while you focus on the warm ones.</p>
+            <p><strong>If you're a solo founder or small team:</strong> you can't afford a sales rep. Every dropped follow-up is revenue you personally lost. RevLoop is your first hire — except it costs $49 a month and never calls in sick.</p>
+            <div class="big-stat">42%</div>
+            <div class="big-stat-sub">of proposals fail not because the prospect said no — but because nobody followed up.</div>
+            <div class="highlight-box">RevLoop is built for both. <strong>The SDR who needs to work smarter. The founder who needs a sales team they can actually afford.</strong> One tool. Two problems solved. Zero dropped deals.</div>
+          </div>
+          <div class="pain-right">
+            <div class="pain-card">
+              <div class="pain-icon">🧊</div>
+              <div>
+                <h4>Your HubSpot pipeline is full of cold deals</h4>
+                <p>Deals sitting in "Proposal Sent" for 3+ weeks. RevLoop syncs your HubSpot pipeline, identifies every cold deal, and re-engages them automatically with context pulled from the real conversation.</p>
+              </div>
+            </div>
+            <div class="pain-card">
+              <div class="pain-icon">⏰</div>
+              <div>
+                <h4>SDRs can only work so many deals at once</h4>
+                <p>The average SDR manages 80–120 active prospects. Manual follow-up at that volume is impossible. RevLoop handles the cold ones so reps can focus on deals that are actually moving.</p>
+              </div>
+            </div>
+            <div class="pain-card">
+              <div class="pain-icon">💼</div>
+              <div>
+                <h4>Small teams can't afford to hire SDRs</h4>
+                <p>A full-time SDR costs $60–80K/year. RevLoop does the follow-up work of a dedicated rep for $49/month — trained on better sales frameworks than most SDRs learn in a year.</p>
+              </div>
+            </div>
+            <div class="pain-card">
+              <div class="pain-icon">💸</div>
+              <div>
+                <h4>This revenue was already in your pipeline</h4>
+                <p>These aren't cold outreach leads. They're warm prospects already in your CRM who said they were interested. You just stopped talking to them before the deal closed.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MINI REVENUE DASHBOARD — moved up after pain -->
+      <section class="lp-mini-dash">
+        <div class="mini-dash-inner">
+          <div class="section-label">Revenue Dashboard</div>
+          <h2>Your money. In plain sight.<br>Every single morning.</h2>
+          <p class="mini-dash-sub">Not buried in a spreadsheet. Not lost in your inbox. Right there — deal by deal, dollar by dollar — telling you exactly where your next dollar is coming from.</p>
+          <div class="dash-ui">
+            <div class="dash-ui-topbar">
+              <div class="dash-ui-title">RevLoop Dashboard</div>
+              <div class="dash-ui-date">Monday, May 4 — Good morning 👋</div>
+            </div>
+            <div class="dash-ui-body">
+              <div class="dash-ui-row">
+                <div class="dash-tile">
+                  <div class="dash-tile-label">💰 Revenue Recovered</div>
+                  <div class="dash-tile-val green">$14,200</div>
+                  <div class="dash-tile-sub up">↑ $3,800 this week</div>
+                </div>
+                <div class="dash-tile">
+                  <div class="dash-tile-label">📡 Revenue In Reach</div>
+                  <div class="dash-tile-val green">$67,500</div>
+                  <div class="dash-tile-sub">across 23 open loops</div>
+                </div>
+                <div class="dash-tile">
+                  <div class="dash-tile-label">🔁 Loops Running</div>
+                  <div class="dash-tile-val white">23</div>
+                  <div class="dash-tile-sub up">8 re-engaged this month</div>
+                </div>
+              </div>
+              <div class="dash-leads">
+                <div class="dash-lead-row">
+                  <div class="lead-info">
+                    <div class="lead-name">Sarah K. — Rebrand Project</div>
+                    <div class="lead-detail">Last contact 11 days ago · Follow-up #2 scheduled tomorrow 9am</div>
+                  </div>
+                  <div class="lead-val">$8,500</div>
+                  <div class="lead-status status-cold">Cold</div>
+                </div>
+                <div class="dash-lead-row">
+                  <div class="lead-info">
+                    <div class="lead-name">Marcus T. — Q3 Campaign</div>
+                    <div class="lead-detail">Replied this morning · Moved back to active</div>
+                  </div>
+                  <div class="lead-val">$12,000</div>
+                  <div class="lead-status status-warm">Re-engaged</div>
+                </div>
+                <div class="dash-lead-row">
+                  <div class="lead-info">
+                    <div class="lead-name">Jade L. — Website Redesign</div>
+                    <div class="lead-detail">Evergreen Loop · 6-month check-in sent last week</div>
+                  </div>
+                  <div class="lead-val">$22,000</div>
+                  <div class="lead-status status-loop">Looping</div>
+                </div>
+                <div class="dash-lead-row">
+                  <div class="lead-info">
+                    <div class="lead-name">Ryan P. — Copywriting Retainer</div>
+                    <div class="lead-detail">Follow-up #1 approved · Sending at 9am their timezone</div>
+                  </div>
+                  <div class="lead-val">$4,800</div>
+                  <div class="lead-status status-cold">Cold</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- DIFFERENTIATOR -->
+      <section class="lp-differentiator">
+        <div class="diff-inner">
+          <div class="section-label">Why RevLoop Is Different</div>
+          <h2>Not another follow-up tool.<br>A revenue recovery system.</h2>
+          <p class="diff-sub">Built on real sales science. Tested across thousands of salespeople. Trained on the strategies of the world's top closers. This is what separates RevLoop from everything else.</p>
+          <div class="diff-grid">
+            <div class="diff-card">
+              <div class="diff-num">01</div>
+              <h3>Trained on the world's best salespeople</h3>
+              <p>RevLoop's AI is trained on strategies tested across thousands of real salespeople and the proven frameworks of the world's top sales gurus. Every follow-up is built on what actually closes deals.</p>
+            </div>
+            <div class="diff-card">
+              <div class="diff-num">02</div>
+              <h3>Thread Intelligence — not templates</h3>
+              <p>Every follow-up is written from the real conversation — the objection raised, the timeline mentioned, the tone of the relationship. Your prospects can't tell the difference between RevLoop and you.</p>
+            </div>
+            <div class="diff-card">
+              <div class="diff-num">03</div>
+              <h3>The loop never closes — ever</h3>
+              <p>Short loops for cold leads. Evergreen loops for prospects who need months. RevLoop keeps every conversation alive for as long as it takes — because the revenue doesn't expire.</p>
+            </div>
+            <div class="diff-card">
+              <div class="diff-num">04</div>
+              <h3>Revenue you can see every morning</h3>
+              <p>A live dashboard showing exactly how much revenue is still in reach — deal by deal, dollar by dollar. Not a vanity metric. A daily reminder that the loop is working.</p>
+            </div>
+            <div class="diff-card">
+              <div class="diff-num">05</div>
+              <h3>Built for SDRs and solo founders equally</h3>
+              <p>SDRs get a tool that works their entire HubSpot pipeline automatically. Solo founders get the equivalent of a full-time sales rep for $49/month. Same product, two very different problems solved.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- HUBSPOT INTEGRATION -->
+      <section class="lp-hubspot">
+        <div class="hs-inner">
+          <div class="hs-left">
+            <div class="section-label">HubSpot Integration</div>
+            <h2>Your HubSpot deals.<br>Automatically followed up.</h2>
+            <p class="hs-body">RevLoop connects directly to HubSpot and reads every deal in your pipeline — stage, value, contact, last activity. The moment a deal goes cold, RevLoop drafts a follow-up using both the Gmail thread context <strong>and</strong> the HubSpot deal data. When a prospect replies, RevLoop writes the activity back to HubSpot automatically. Your pipeline stays current without you touching it.</p>
+            <div class="hs-bullets">
+              <div class="hs-bullet">
+                <div class="hs-bullet-icon">✓</div>
+                <div>Pulls deal name, value, stage and contact from HubSpot automatically</div>
+              </div>
+              <div class="hs-bullet">
+                <div class="hs-bullet-icon">✓</div>
+                <div>Combines HubSpot deal context with real Gmail thread intelligence</div>
+              </div>
+              <div class="hs-bullet">
+                <div class="hs-bullet-icon">✓</div>
+                <div>Writes activity logs back to HubSpot the moment a deal re-engages</div>
+              </div>
+              <div class="hs-bullet">
+                <div class="hs-bullet-icon">✓</div>
+                <div>Works across your entire pipeline — not just the deals you remember to follow up on</div>
+              </div>
+              <div class="hs-bullet">
+                <div class="hs-bullet-icon">✓</div>
+                <div>SDR teams: one RevLoop account covers your whole pipeline automatically</div>
+              </div>
+            </div>
+            <div class="hs-connect">
+              <div class="hs-connect-logo hs-logo-rl">Rev<span>Loop</span></div>
+              <div class="hs-connect-line">
+                <div class="hs-connect-dot"></div>
+                <div class="hs-connect-dot"></div>
+                <div class="hs-connect-dot"></div>
+              </div>
+              <div class="hs-connect-logo hs-logo-hs">
+                <svg width="18" height="18" viewBox="0 0 100 100" fill="none">
+                  <circle cx="50" cy="50" r="50" fill="#FF7A59"/>
+                  <path d="M62 35V28a7 7 0 10-14 0v7H34v8h32v-8H62zM38 52v22h24V52H38z" fill="white"/>
+                </svg>
+                HubSpot
+              </div>
+            </div>
+          </div>
+          <div class="hs-right">
+            <!-- HubSpot pipeline mockup -->
+            <div class="hs-mockup">
+              <div class="hs-mockup-bar">
+                <div class="hs-mockup-title">
+                  <svg width="14" height="14" viewBox="0 0 100 100" fill="none" style="flex-shrink:0">
+                    <circle cx="50" cy="50" r="50" fill="#FF7A59"/>
+                    <path d="M62 35V28a7 7 0 10-14 0v7H34v8h32v-8H62zM38 52v22h24V52H38z" fill="white"/>
+                  </svg>
+                  HubSpot CRM — Deal Pipeline
+                </div>
+                <div class="hs-mockup-sync">
+                  <div class="hs-sync-dot"></div>
+                  Synced with RevLoop
+                </div>
+              </div>
+              <div class="hs-mockup-body">
+                <!-- Pipeline stages header -->
+                <div class="hs-stages">
+                  <div class="hs-stage">Contacted</div>
+                  <div class="hs-stage">Proposal Sent</div>
+                  <div class="hs-stage hs-stage-active">Follow-Up</div>
+                  <div class="hs-stage">Negotiation</div>
+                </div>
+                <!-- Deal cards -->
+                <div class="hs-deals">
+                  <div class="hs-deal hs-deal-cold">
+                    <div class="hs-deal-top">
+                      <div class="hs-deal-name">Acme Corp — Website Redesign</div>
+                      <div class="hs-deal-badge cold">Cold 14d</div>
+                    </div>
+                    <div class="hs-deal-val">$18,500</div>
+                    <div class="hs-deal-contact">Sarah K. · sarah@acmecorp.com</div>
+                    <div class="hs-deal-action">
+                      <div class="hs-action-dot"></div>
+                      RevLoop follow-up queued — tomorrow 9am
+                    </div>
+                  </div>
+                  <div class="hs-deal hs-deal-warm">
+                    <div class="hs-deal-top">
+                      <div class="hs-deal-name">BlueSky Inc — Q3 Campaign</div>
+                      <div class="hs-deal-badge warm">Re-engaged ✓</div>
+                    </div>
+                    <div class="hs-deal-val">$12,000</div>
+                    <div class="hs-deal-contact">Marcus T. · marcus@bluesky.io</div>
+                    <div class="hs-deal-action warm">
+                      <div class="hs-action-dot warm"></div>
+                      Replied 2hrs ago · Deal moved to Negotiation
+                    </div>
+                  </div>
+                  <div class="hs-deal hs-deal-cold">
+                    <div class="hs-deal-top">
+                      <div class="hs-deal-name">Vanta Studio — Brand Identity</div>
+                      <div class="hs-deal-badge cold">Cold 21d</div>
+                    </div>
+                    <div class="hs-deal-val">$9,200</div>
+                    <div class="hs-deal-contact">Jade L. · jade@vantastudio.com</div>
+                    <div class="hs-deal-action">
+                      <div class="hs-action-dot"></div>
+                      Evergreen Loop active · Step 2 of 3
+                    </div>
+                  </div>
+                  <div class="hs-deal hs-deal-loop">
+                    <div class="hs-deal-top">
+                      <div class="hs-deal-name">Meridian SaaS — Retainer</div>
+                      <div class="hs-deal-badge loop">Looping</div>
+                    </div>
+                    <div class="hs-deal-val">$36,000</div>
+                    <div class="hs-deal-contact">Ryan P. · ryan@meridiansaas.com</div>
+                    <div class="hs-deal-action loop">
+                      <div class="hs-action-dot loop"></div>
+                      6-month Evergreen Loop · Next touch in 8 weeks
+                    </div>
+                  </div>
+                </div>
+                <div class="hs-mockup-footer">
+                  <div>4 deals monitored by RevLoop</div>
+                  <div class="hs-footer-stat">$75,700 in reach</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FEATURES -->
+      <section class="lp-features">
+        <div class="features-hdr">
+          <div class="section-label" style="justify-content:center;">Feature Set</div>
+          <h2>Your silent revenue recovery team.</h2>
+          <p>Nine features. One outcome. More money flowing back in — automatically, personally, forever.</p>
+        </div>
+        <div class="features-grid">
+          <div class="feat-card">
+            <div class="feat-icon">🔍</div>
+            <h3>Loop Finder</h3>
+            <p>Scans Gmail for real sales conversations. Not newsletters. Actual deals — classified using real thread context and AI trained on sales signals.</p>
+            <span class="feat-pill">Automatic</span>
+          </div>
+          <div class="feat-card">
+            <div class="feat-icon">🧊</div>
+            <h3>Loop Alert</h3>
+            <p>The moment a deal goes cold, RevLoop flags it. Nothing slips through. Every stalled conversation gets caught before it disappears.</p>
+            <span class="feat-pill">Real-time</span>
+          </div>
+          <div class="feat-card">
+            <div class="feat-icon">🎙️</div>
+            <h3>Voice Match</h3>
+            <p>Reads six months of your sent emails and mirrors exactly how you write. Sentence length, sign-off, tone, punctuation habits. Every follow-up sounds like you.</p>
+            <span class="feat-pill">Calibrated once</span>
+          </div>
+          <div class="feat-card">
+            <div class="feat-icon">🧠</div>
+            <h3>Sales-Trained AI</h3>
+            <p>Follow-ups built on frameworks tested across thousands of salespeople. Trained on the world's top closers. Never generic. Always built to re-engage.</p>
+            <span class="feat-pill">Guru-trained</span>
+          </div>
+          <div class="feat-card">
+            <div class="feat-icon">✅</div>
+            <h3>Loop Queue</h3>
+            <p>Every draft lands in your approval queue. Review and approve in one click — or flip AutoLoop to send automatically. Your control level, your choice.</p>
+            <span class="feat-pill">Full control</span>
+          </div>
+          <div class="feat-card">
+            <div class="feat-icon">🔁</div>
+            <h3>Evergreen Loop</h3>
+            <p>Prospect not ready in January? RevLoop checks back in July. And next January. Long-term sequences that keep every deal alive — for months or even years.</p>
+            <span class="feat-pill">Never give up</span>
+          </div>
+          <div class="feat-card">
+            <div class="feat-icon">📅</div>
+            <h3>Loop Link</h3>
+            <p>Your booking link inserted contextually — in the right message, at the right moment, phrased exactly as naturally as you'd say it yourself.</p>
+            <span class="feat-pill">Smart insertion</span>
+          </div>
+          <div class="feat-card">
+            <div class="feat-icon">🔗</div>
+            <h3>HubSpot Loop Sync</h3>
+            <p>Two-way HubSpot integration. RevLoop reads your entire pipeline — deal value, stage, contact info — and writes activity logs back automatically when deals re-engage. Your CRM updates itself.</p>
+            <span class="feat-pill">Native integration</span>
+          </div>
+          <div class="feat-card">
+            <div class="feat-icon">💰</div>
+            <h3>Revenue Recovered</h3>
+            <p>A live dashboard showing every deal re-engaged and the actual dollars recovered. Screenshot it. Show it to your accountant. The loop is paying.</p>
+            <span class="feat-pill">The wow factor</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- HOW IT WORKS -->
+      <section class="lp-how">
+        <div class="section-label">How It Works</div>
+        <h2>Six steps. One outcome.</h2>
+        <p class="how-sub">Setup takes 3 minutes. Revenue recovery starts the same day.</p>
+        <div class="how-steps">
+          <div class="how-step">
+            <div class="step-n">01</div>
+            <h3>Connect Gmail</h3>
+            <p>One-click Google OAuth. Only what's needed. Nothing stored you don't approve.</p>
+            <span class="step-tag">3 minutes</span>
+          </div>
+          <div class="how-step">
+            <div class="step-n">02</div>
+            <h3>Voice Calibration</h3>
+            <p>Reads your sent emails. Builds your writing profile. Every follow-up sounds like you from day one.</p>
+            <span class="step-tag">30 seconds</span>
+          </div>
+          <div class="how-step">
+            <div class="step-n">03</div>
+            <h3>Leads Found</h3>
+            <p>Last 90 days scanned. Real deals surface. Cold ones flagged immediately.</p>
+            <span class="step-tag">Automatic</span>
+          </div>
+          <div class="how-step">
+            <div class="step-n">04</div>
+            <h3>Drafts Generated</h3>
+            <p>Context-aware follow-ups from the real thread. Your voice. Sales-trained AI. Booking link included.</p>
+            <span class="step-tag">Sales Intelligence</span>
+          </div>
+          <div class="how-step">
+            <div class="step-n">05</div>
+            <h3>You Approve</h3>
+            <p>Review in Loop Queue or turn on AutoLoop. One click either way.</p>
+            <span class="step-tag">One click</span>
+          </div>
+          <div class="how-step">
+            <div class="step-n">06</div>
+            <h3>Revenue Returns</h3>
+            <p>Replies come in. Deals re-engage. Dashboard climbs. The loop never ends.</p>
+            <span class="step-tag">💰</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- DASHBOARD -->
+      <section class="lp-dashboard">
+        <div class="dash-inner">
+          <div class="dash-left">
+            <h2>Every morning, your dashboard tells you exactly where your next dollar is coming from.</h2>
+            <p>Not buried in a spreadsheet. Not lost in your inbox. Right there — deal by deal, dollar by dollar. Your Revenue Recovered counter climbs every time a cold lead writes back.</p>
+          </div>
+          <div class="dash-right">
+            <div class="dash-stat">
+              <span class="dash-lbl">💰 Revenue Recovered — This Month</span>
+              <span class="dash-val">$14,200</span>
+            </div>
+            <div class="dash-stat">
+              <span class="dash-lbl">📡 Revenue Still In Reach</span>
+              <span class="dash-val">$67,500</span>
+            </div>
+            <div class="dash-stat">
+              <span class="dash-lbl">🔁 Active Loops Running</span>
+              <span class="dash-val">23</span>
+            </div>
+            <div class="dash-stat">
+              <span class="dash-lbl">🧊 Cold Leads Re-Engaged</span>
+              <span class="dash-val">8</span>
+            </div>
+            <div class="dash-stat">
+              <span class="dash-lbl">✅ Follow-Ups Sent This Week</span>
+              <span class="dash-val">34</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="lp-quote">
+        <div class="quote-inner">
+          <blockquote>"I had a proposal sitting cold for 11 weeks. RevLoop sent one follow-up. The client replied the next morning. <span>That was a $9,000 project I had completely written off."</span></blockquote>
+          <cite>— Marcus T., Brand &amp; Strategy Consultant</cite>
+        </div>
+      </section>
+
+      <section class="lp-testimonials">
+        <div class="testi-lbl">What happens when the loop never closes</div>
+        <div class="testi-grid">
+          <div class="testi">
+            <div class="testi-text">"I had a proposal sitting cold for 11 weeks. RevLoop sent one follow-up. The client replied the next morning. <span>That was a $9,000 project I had completely written off."</span></div>
+            <div class="testi-author">
+              <div class="testi-av">M</div>
+              <div>
+                <div class="testi-name">Marcus T.</div>
+                <div class="testi-role">Brand &amp; Strategy Consultant</div>
+              </div>
+            </div>
+          </div>
+          <div class="testi">
+            <div class="testi-text">"The follow-up referenced something specific the client said in our first email three months ago. She replied saying she thought I personally wrote it. <span>That's the whole game."</span></div>
+            <div class="testi-author">
+              <div class="testi-av">J</div>
+              <div>
+                <div class="testi-name">Jade L.</div>
+                <div class="testi-role">Founder, Digital Agency</div>
+              </div>
+            </div>
+          </div>
+          <div class="testi">
+            <div class="testi-text">"Connected Gmail on a Tuesday. By Thursday I had two cold leads reply. <span>One turned into a $22K contract.</span> I hadn't touched either of them in six weeks."</div>
+            <div class="testi-author">
+              <div class="testi-av">R</div>
+              <div>
+                <div class="testi-name">Ryan K.</div>
+                <div class="testi-role">Freelance Copywriter</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WOW STAT -->
+      <section class="lp-wowstat">
+        <div class="wow-inner">
+          <div class="wow-num">42%</div>
+          <div class="wow-sub"><strong>of all proposals fail not because the prospect said no —</strong> but because nobody followed up. That's not a sales problem. That's a revenue leak. RevLoop seals it — automatically, personally, using the strategies the world's best closers actually use.</div>
+        </div>
+      </section>
+
+      <!-- PRICING -->
+      <section class="lp-pricing">
+        <div class="pricing-hdr">
+          <div class="section-label" style="justify-content:center;">Pricing</div>
+          <h2>ROI on day one. Or your money back.</h2>
+          <p>One recovered deal pays for a full year of RevLoop. The math is embarrassingly good.</p>
+        </div>
+        <div class="pricing-grid">
+          <div class="p-card">
+            <div class="p-top">
+              <div class="p-name">Solo</div>
+              <div class="p-price">$49<sub>/mo</sub></div>
+              <div class="p-desc">Freelancers &amp; solo consultants. Start recovering revenue today.</div>
+            </div>
+            <ul class="p-feats">
+              <li>1 Gmail account</li>
+              <li>Up to 50 active loops</li>
+              <li>Voice Match calibration</li>
+              <li>3-step follow-up sequences</li>
+              <li>Loop Queue — approve all drafts</li>
+              <li>Revenue Recovered dashboard</li>
+              <li>Booking link insertion</li>
+              <li>14-day free trial, no card needed</li>
+            </ul>
+            <div class="p-cta-wrap">
+              <button class="p-btn">Start free trial</button>
+            </div>
+          </div>
+          <div class="p-card feat">
+            <div class="p-top">
+              <div class="p-badge">Most popular</div>
+              <div class="p-name">Agency</div>
+              <div class="p-price">$149<sub>/mo</sub></div>
+              <div class="p-desc">Growing agencies. Where most of the revenue lives.</div>
+            </div>
+            <ul class="p-feats">
+              <li>3 Gmail accounts</li>
+              <li>Up to 200 active loops</li>
+              <li>AutoLoop — auto-send toggle</li>
+              <li>HubSpot Loop Sync</li>
+              <li>Evergreen Loops — 6mo &amp; 1yr</li>
+              <li>Custom sequence timing per lead</li>
+              <li>Revenue In Reach forecasting</li>
+              <li>Sales-trained AI frameworks</li>
+              <li>Priority support</li>
+            </ul>
+            <div class="p-cta-wrap">
+              <button class="p-btn">Start free trial</button>
+            </div>
+          </div>
+          <div class="p-card">
+            <div class="p-top">
+              <div class="p-name">Team</div>
+              <div class="p-price">$399<sub>/mo</sub></div>
+              <div class="p-desc">Multi-rep teams. Shared loops, shared revenue.</div>
+            </div>
+            <ul class="p-feats">
+              <li>Up to 5 seats</li>
+              <li>Unlimited active loops</li>
+              <li>Shared team dashboard</li>
+              <li>Per-rep Voice Match profiles</li>
+              <li>Slack deal alerts on re-engagement</li>
+              <li>Custom AI tone profiles per client</li>
+              <li>API access</li>
+              <li>Dedicated onboarding call</li>
+            </ul>
+            <div class="p-cta-wrap">
+              <button class="p-btn">Start free trial</button>
+            </div>
+          </div>
+        </div>
+        <p class="pricing-fine">All plans include a 14-day free trial. No credit card required. Cancel anytime — though nobody really does once the revenue starts coming back.</p>
+      </section>
+
+      <!-- FAQ -->
+      <section class="lp-faq">
+        <div class="faq-inner">
+          <div class="section-label">FAQ</div>
+          <h2>The questions everyone actually asks.</h2>
+          <div class="faq-list">
+            <div class="faq-item">
+              <div class="faq-q">Will my prospects know it's automated?</div>
+              <div class="faq-a">No. <strong>Voice Match</strong> mirrors your exact writing style and the follow-up sends from your actual Gmail address. Your prospects think you wrote it at your desk. You did not. We did.</div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q">What sales strategies does the AI use?</div>
+              <div class="faq-a">RevLoop's AI is trained on frameworks tested across thousands of real salespeople and the proven strategies of the world's top sales closers — including follow-up sequencing, objection handling timing, and re-engagement psychology. <strong>Every follow-up is built on what actually works, not what sounds polite.</strong></div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q">Does it send without me approving?</div>
+              <div class="faq-a">Only if you want it to. By default every draft lands in your <strong>Loop Queue</strong> for one-click approval. Flip on <strong>AutoLoop</strong> when you're ready to go fully hands-off.</div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q">What if a prospect replies mid-sequence?</div>
+              <div class="faq-a">The moment a reply lands, RevLoop detects it and <strong>immediately cancels all remaining steps</strong>. The deal moves back to Active automatically. No awkward double follow-ups — ever.</div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q">What's an Evergreen Loop?</div>
+              <div class="faq-a">A long-term sequence for prospects who need more time. Someone said "not right now" in February? RevLoop checks back in August — and again next February. <strong>The loop stays open until the deal is won or you say stop.</strong></div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q">How is this different from a CRM?</div>
+              <div class="faq-a">A CRM tracks deals. <strong>RevLoop recovers them.</strong> No data entry, no pipeline maintenance. It sits on top of Gmail and works with what's already there. Setup in 3 minutes — not 3 days.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER CTA -->
+      <section class="lp-footer-cta">
+        <div class="ftc-inner">
+          <h2 class="ftc-h2">The loop never ends.<br>And neither does <span>your revenue.</span></h2>
+          <p class="ftc-sub">Connect Gmail in 3 minutes. Watch the Revenue Recovered dashboard climb. Your first recovered deal is probably already sitting in your inbox right now.</p>
+          <a href="#" class="btn-main" style="font-size:15px;padding:16px 36px;">Start recovering revenue — free</a>
+          <p class="ftc-fine">14-day free trial. No credit card. No "just checking in" emails — ever.</p>
+        </div>
+      </section>
+
+      <footer class="lp-footer">
+        <div class="ft-logo">Rev<span>Loop</span></div>
+        <ul class="ft-links">
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Changelog</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="ft-copy">© 2026 RevLoop. The loop never closes.</div>
+      </footer>
+
+    </div>
+  </div><!-- /tab-landing -->
+
+</main>
+
+<script>
+function showTab(id) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  event.currentTarget.classList.add('active');
+  document.querySelector('.main').scrollTop = 0;
+  window.scrollTo(0,0);
+}
+</script>
+</body>
+</html>
